@@ -21,5 +21,14 @@ namespace QuanLyNhaHang
         {
             Application.ExitThread();
         }
+
+
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            OptionForm op = new OptionForm();
+            op.Show();
+            this.Hide();
+        }
     }
 }
