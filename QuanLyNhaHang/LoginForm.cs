@@ -44,8 +44,8 @@ namespace QuanLyNhaHang
                 return;
             }
             drLogin.Close();
-            MainForm M = new MainForm();
-            M.Show();
+            MainForm main = new MainForm();
+            main.Show();
             this.Hide();
         }
 

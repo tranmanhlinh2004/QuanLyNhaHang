@@ -88,7 +88,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(1093, 96);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(168, 24);
+            comboBox1.Size = new Size(168, 27);
             comboBox1.TabIndex = 2;
             // 
             // label1
@@ -97,7 +97,7 @@
             label1.Font = new Font("Segoe UI", 12F);
             label1.Location = new Point(1093, 65);
             label1.Name = "label1";
-            label1.Size = new Size(77, 21);
+            label1.Size = new Size(96, 28);
             label1.TabIndex = 3;
             label1.Text = "Phân loại:";
             // 
@@ -105,7 +105,7 @@
             // 
             textBox1.Location = new Point(448, 94);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(227, 23);
+            textBox1.Size = new Size(227, 27);
             textBox1.TabIndex = 4;
             // 
             // label2
@@ -114,7 +114,7 @@
             label2.Font = new Font("Segoe UI", 12F);
             label2.Location = new Point(448, 64);
             label2.Name = "label2";
-            label2.Size = new Size(134, 21);
+            label2.Size = new Size(166, 28);
             label2.TabIndex = 3;
             label2.Text = "Tìm kiếm món ăn:";
             // 
@@ -134,7 +134,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(448, 142);
             label3.Name = "label3";
-            label3.Size = new Size(84, 32);
+            label3.Size = new Size(107, 39);
             label3.TabIndex = 6;
             label3.Text = "Menu";
             // 
@@ -144,7 +144,7 @@
             label4.Font = new Font("Arial Rounded MT Bold", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(68, 62);
             label4.Name = "label4";
-            label4.Size = new Size(236, 88);
+            label4.Size = new Size(287, 108);
             label4.TabIndex = 7;
             label4.Text = "Trang \r\nkhách hàng\r\n";
             // 
@@ -157,10 +157,11 @@
             btnReturn.TabIndex = 0;
             btnReturn.Text = "Thoát";
             btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
             // 
             // CustomerForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1353, 813);
             Controls.Add(label4);
