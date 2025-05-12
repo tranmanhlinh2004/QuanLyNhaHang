@@ -63,7 +63,7 @@
             Controls.Add(btnKhachHang);
             Name = "OptionForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "OptionForm";
             ResumeLayout(false);
         }
 
