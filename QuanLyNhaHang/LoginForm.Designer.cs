@@ -63,16 +63,16 @@
             // 
             txtTendangnhap.Location = new Point(307, 125);
             txtTendangnhap.Name = "txtTendangnhap";
-            txtTendangnhap.Size = new Size(213, 23);
-            txtTendangnhap.TabIndex = 0;
+            txtTendangnhap.Size = new Size(193, 27);
+            txtTendangnhap.TabIndex = 1;
             // 
             // txtMatkhau
             // 
             txtMatkhau.Location = new Point(307, 181);
             txtMatkhau.Name = "txtMatkhau";
             txtMatkhau.PasswordChar = '●';
-            txtMatkhau.Size = new Size(213, 23);
-            txtMatkhau.TabIndex = 1;
+            txtMatkhau.Size = new Size(193, 27);
+            txtMatkhau.TabIndex = 2;
             // 
             // btnLogin
             // 
@@ -90,8 +90,8 @@
             btnClose.Font = new Font("Segoe UI", 12F);
             btnClose.Location = new Point(370, 274);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(124, 43);
-            btnClose.TabIndex = 3;
+            btnClose.Size = new Size(142, 57);
+            btnClose.TabIndex = 2;
             btnClose.Text = "Thoát";
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
