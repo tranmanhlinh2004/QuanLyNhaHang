@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaHang
 {
-    public partial class MainForm: Form
+    public partial class ManageForm: Form
     {
-        public MainForm()
+        public ManageForm()
         {
             InitializeComponent();
         }

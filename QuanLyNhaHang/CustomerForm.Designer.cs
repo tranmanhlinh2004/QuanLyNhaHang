@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnDatban = new Button();
             dataGridView1 = new DataGridView();
             btnOrder = new Button();
             btnPaid = new Button();
-            comboBox1 = new ComboBox();
+            cbPhanloai = new ComboBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtSearch = new TextBox();
             label2 = new Label();
             btnSearch = new Button();
             label3 = new Label();
@@ -46,8 +48,8 @@
             // btnDatban
             // 
             btnDatban.Cursor = Cursors.Hand;
-            btnDatban.Font = new Font("Segoe UI", 16F);
-            btnDatban.Location = new Point(93, 212);
+            btnDatban.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
+            btnDatban.Location = new Point(105, 236);
             btnDatban.Name = "btnDatban";
             btnDatban.Size = new Size(213, 84);
             btnDatban.TabIndex = 0;
@@ -56,17 +58,39 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Location = new Point(448, 193);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(813, 556);
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 65;
+            dataGridView1.Size = new Size(886, 584);
             dataGridView1.TabIndex = 1;
             // 
             // btnOrder
             // 
-            btnOrder.Font = new Font("Segoe UI", 16F);
-            btnOrder.Location = new Point(93, 359);
+            btnOrder.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
+            btnOrder.Location = new Point(105, 383);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(213, 84);
             btnOrder.TabIndex = 0;
@@ -75,57 +99,61 @@
             // 
             // btnPaid
             // 
-            btnPaid.Font = new Font("Segoe UI", 16F);
-            btnPaid.Location = new Point(93, 499);
+            btnPaid.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
+            btnPaid.Location = new Point(105, 523);
             btnPaid.Name = "btnPaid";
             btnPaid.Size = new Size(213, 84);
             btnPaid.TabIndex = 0;
             btnPaid.Text = "Thanh toán";
             btnPaid.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbPhanloai
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(1093, 96);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(168, 27);
-            comboBox1.TabIndex = 2;
+            cbPhanloai.Font = new Font("Segoe UI", 9F);
+            cbPhanloai.FormattingEnabled = true;
+            cbPhanloai.Location = new Point(1166, 93);
+            cbPhanloai.Name = "cbPhanloai";
+            cbPhanloai.Size = new Size(168, 23);
+            cbPhanloai.TabIndex = 2;
+            cbPhanloai.SelectedIndexChanged += cbPhanloai_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(1093, 65);
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(1166, 64);
             label1.Name = "label1";
-            label1.Size = new Size(96, 28);
+            label1.Size = new Size(79, 21);
             label1.TabIndex = 3;
             label1.Text = "Phân loại:";
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Location = new Point(448, 94);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(227, 27);
-            textBox1.TabIndex = 4;
+            txtSearch.Location = new Point(448, 94);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(227, 23);
+            txtSearch.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(448, 64);
             label2.Name = "label2";
-            label2.Size = new Size(166, 28);
+            label2.Size = new Size(138, 21);
             label2.TabIndex = 3;
             label2.Text = "Tìm kiếm món ăn:";
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(702, 94);
+            btnSearch.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.Location = new Point(702, 91);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 28);
             btnSearch.TabIndex = 5;
             btnSearch.Text = "Tìm kiếm";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // label3
             // 
@@ -134,7 +162,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(448, 142);
             label3.Name = "label3";
-            label3.Size = new Size(107, 39);
+            label3.Size = new Size(84, 32);
             label3.TabIndex = 6;
             label3.Text = "Menu";
             // 
@@ -144,14 +172,14 @@
             label4.Font = new Font("Arial Rounded MT Bold", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(68, 62);
             label4.Name = "label4";
-            label4.Size = new Size(287, 108);
+            label4.Size = new Size(236, 88);
             label4.TabIndex = 7;
             label4.Text = "Trang \r\nkhách hàng\r\n";
             // 
             // btnReturn
             // 
-            btnReturn.Font = new Font("Segoe UI", 16F);
-            btnReturn.Location = new Point(93, 647);
+            btnReturn.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
+            btnReturn.Location = new Point(105, 671);
             btnReturn.Name = "btnReturn";
             btnReturn.Size = new Size(213, 84);
             btnReturn.TabIndex = 0;
@@ -161,16 +189,16 @@
             // 
             // CustomerForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1353, 813);
+            ClientSize = new Size(1402, 845);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(btnSearch);
-            Controls.Add(textBox1);
+            Controls.Add(txtSearch);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cbPhanloai);
             Controls.Add(dataGridView1);
             Controls.Add(btnReturn);
             Controls.Add(btnPaid);
@@ -182,6 +210,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CustomerForm";
             FormClosing += CustomerForm_FormClosing;
+            Load += CustomerForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -193,9 +222,9 @@
         private DataGridView dataGridView1;
         private Button btnOrder;
         private Button btnPaid;
-        private ComboBox comboBox1;
+        private ComboBox cbPhanloai;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Label label2;
         private Button btnSearch;
         private Label label3;

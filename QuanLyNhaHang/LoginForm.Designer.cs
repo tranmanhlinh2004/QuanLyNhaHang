@@ -43,9 +43,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(153, 123);
+            label1.Location = new Point(175, 164);
             label1.Name = "label1";
-            label1.Size = new Size(141, 25);
+            label1.Size = new Size(179, 32);
             label1.TabIndex = 0;
             label1.Text = "Tên đăng nhập:";
             // 
@@ -53,33 +53,36 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(153, 179);
+            label2.Location = new Point(175, 239);
             label2.Name = "label2";
-            label2.Size = new Size(95, 25);
+            label2.Size = new Size(120, 32);
             label2.TabIndex = 0;
             label2.Text = "Mật khẩu:";
             // 
             // txtTendangnhap
             // 
-            txtTendangnhap.Location = new Point(307, 125);
+            txtTendangnhap.Location = new Point(351, 167);
+            txtTendangnhap.Margin = new Padding(3, 4, 3, 4);
             txtTendangnhap.Name = "txtTendangnhap";
-            txtTendangnhap.Size = new Size(193, 27);
+            txtTendangnhap.Size = new Size(220, 27);
             txtTendangnhap.TabIndex = 1;
             // 
             // txtMatkhau
             // 
-            txtMatkhau.Location = new Point(307, 181);
+            txtMatkhau.Location = new Point(351, 241);
+            txtMatkhau.Margin = new Padding(3, 4, 3, 4);
             txtMatkhau.Name = "txtMatkhau";
             txtMatkhau.PasswordChar = '●';
-            txtMatkhau.Size = new Size(193, 27);
+            txtMatkhau.Size = new Size(220, 27);
             txtMatkhau.TabIndex = 2;
             // 
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 12F);
-            btnLogin.Location = new Point(180, 274);
+            btnLogin.Location = new Point(206, 365);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(124, 43);
+            btnLogin.Size = new Size(142, 57);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Đăng nhập";
             btnLogin.UseVisualStyleBackColor = true;
@@ -88,9 +91,10 @@
             // btnClose
             // 
             btnClose.Font = new Font("Segoe UI", 12F);
-            btnClose.Location = new Point(370, 274);
+            btnClose.Location = new Point(423, 365);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(142, 57);
+            btnClose.Size = new Size(162, 57);
             btnClose.TabIndex = 2;
             btnClose.Text = "Thoát";
             btnClose.UseVisualStyleBackColor = true;
@@ -100,9 +104,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Cambria", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(255, 56);
+            label3.Location = new Point(291, 75);
             label3.Name = "label3";
-            label3.Size = new Size(174, 37);
+            label3.Size = new Size(216, 47);
             label3.TabIndex = 0;
             label3.Text = "Đăng nhập";
             // 
@@ -111,9 +115,9 @@
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 11F);
             linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(447, 221);
+            linkLabel1.Location = new Point(491, 295);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(63, 20);
+            linkLabel1.Size = new Size(80, 25);
             linkLabel1.TabIndex = 15;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Đăng ký";
@@ -123,17 +127,17 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11F);
-            label4.Location = new Point(306, 221);
+            label4.Location = new Point(321, 295);
             label4.Name = "label4";
-            label4.Size = new Size(135, 20);
+            label4.Size = new Size(173, 25);
             label4.TabIndex = 14;
             label4.Text = "Chưa có tài khoản?";
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(678, 368);
+            ClientSize = new Size(775, 491);
             Controls.Add(linkLabel1);
             Controls.Add(label4);
             Controls.Add(btnClose);
@@ -143,6 +147,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
