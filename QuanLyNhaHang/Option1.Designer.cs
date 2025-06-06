@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaHang
 {
-    partial class OptionForm
+    partial class Option1
     {
         /// <summary>
         ///  Required designer variable.

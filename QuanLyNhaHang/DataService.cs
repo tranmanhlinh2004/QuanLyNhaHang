@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace QuanLyNhaHang
 {
@@ -13,7 +9,11 @@ namespace QuanLyNhaHang
     {
         private static SqlConnection mySqlConnection;
         private SqlDataAdapter myDataAdapter;
-        //hàm kết nối với CSDL
+
+        // Cho phép truy cập connection từ ngoài (ví dụ DisplayTable dùng)
+        public SqlConnection MyConnection => mySqlConnection;
+
+        // Hàm kết nối CSDL
         public bool OpenDataBase()
         {
             string conStr = "Data Source=(local);Initial Catalog=QuanLyNhaHang;Integrated Security=True";
@@ -30,7 +30,17 @@ namespace QuanLyNhaHang
             }
             return true;
         }
-        //Hàm truy vấn dữ liệu
+
+        // Hàm đóng kết nối
+        public void CloseDatabase()
+        {
+            if (mySqlConnection != null && mySqlConnection.State == ConnectionState.Open)
+            {
+                mySqlConnection.Close();
+            }
+        }
+
+        // Truy vấn dữ liệu
         public DataTable RunQuery(string sSql)
         {
             DataTable myDataTable = new DataTable();
@@ -47,7 +57,8 @@ namespace QuanLyNhaHang
             }
             return myDataTable;
         }
-        //Hàm cập nhật một DataTable vào một bảng của CSDL
+
+        // Cập nhật bảng
         public void Update(DataTable myDataTable)
         {
             try
@@ -59,7 +70,8 @@ namespace QuanLyNhaHang
                 DisplayError(ex);
             }
         }
-        //Hàm thực hiện một câu lệnh SQL dựa trên SqlCommand
+
+        // Thực thi câu lệnh SQL
         public void ExecuteNonQuery(string sSql)
         {
             SqlCommand mySqlCommand = new SqlCommand(sSql, mySqlConnection);
@@ -72,14 +84,20 @@ namespace QuanLyNhaHang
                 DisplayError(ex);
             }
         }
+
+        // Hiển thị lỗi
         public void DisplayError(SqlException ex)
         {
             string sSql = "SELECT * FROM Errors WHERE Number = " + ex.Number;
             DataTable dtError = RunQuery(sSql);
-            if (dtError.Rows.Count > 0)
+            if (dtError != null && dtError.Rows.Count > 0)
+            {
                 MessageBox.Show(dtError.Rows[0][1].ToString().Trim(), "Lỗi " + ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
+            {
                 MessageBox.Show(ex.Message, "Error " + ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

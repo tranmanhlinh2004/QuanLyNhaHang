@@ -25,7 +25,7 @@ namespace QuanLyNhaHang
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            OptionForm op = new OptionForm();
+            Option1 op = new Option1();
             op.Show();
             this.Hide();
         }
@@ -86,6 +86,28 @@ namespace QuanLyNhaHang
             string sSql = "SELECT Ten_mon_an, Phan_loai, Don_gia FROM ThucDon WHERE Ten_mon_an LIKE N'%" + txtSearch.Text + "%'";
             DataTable dtSearch = myDataService.RunQuery(sSql);
             dataGridView1.DataSource = dtSearch;
+        }
+
+        private void btnDatban_Click(object sender, EventArgs e)
+        {
+            DatBanForm dtBanForm = new DatBanForm();
+            dtBanForm.Show();
+            this.Hide();
+
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            OrderForm od = new OrderForm();
+            od.Show();
+            this.Hide();
+        }
+
+        private void btnPaid_Click(object sender, EventArgs e)
+        {
+            IdSearch id = new IdSearch();
+            id.Show();
+            this.Hide();
         }
     }
 }

@@ -83,7 +83,7 @@ namespace QuanLyNhaHang
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            OptionForm op = new OptionForm();
+            Option1 op = new Option1();
             op.Show();
             this.Hide();
         }

@@ -1,8 +1,8 @@
 namespace QuanLyNhaHang
 {
-    public partial class OptionForm : Form
+    public partial class Option1 : Form
     {
-        public OptionForm()
+        public Option1()
         {
             InitializeComponent();
         }

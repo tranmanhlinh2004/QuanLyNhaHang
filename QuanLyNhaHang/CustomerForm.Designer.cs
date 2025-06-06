@@ -55,6 +55,7 @@
             btnDatban.TabIndex = 0;
             btnDatban.Text = "Đặt bàn";
             btnDatban.UseVisualStyleBackColor = true;
+            btnDatban.Click += btnDatban_Click;
             // 
             // dataGridView1
             // 
@@ -96,6 +97,7 @@
             btnOrder.TabIndex = 0;
             btnOrder.Text = "Gọi món";
             btnOrder.UseVisualStyleBackColor = true;
+            btnOrder.Click += btnOrder_Click;
             // 
             // btnPaid
             // 
@@ -106,6 +108,7 @@
             btnPaid.TabIndex = 0;
             btnPaid.Text = "Thanh toán";
             btnPaid.UseVisualStyleBackColor = true;
+            btnPaid.Click += btnPaid_Click;
             // 
             // cbPhanloai
             // 
