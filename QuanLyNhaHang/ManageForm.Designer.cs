@@ -38,12 +38,12 @@
             label1 = new Label();
             btnNhapHang = new Button();
             panel1 = new Panel();
+            label3 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             flpThongKeBan = new FlowLayoutPanel();
             btnNguyenLieu = new Button();
-            label2 = new Label();
-            label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            lblSoDu = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -78,6 +78,7 @@
             button3.TabIndex = 0;
             button3.Text = "Quản lý bàn ăn";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -88,6 +89,7 @@
             button4.TabIndex = 0;
             button4.Text = "Quản lý hóa đơn";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // btnLogout
             // 
@@ -109,6 +111,7 @@
             button7.TabIndex = 0;
             button7.Text = "Thống kê - Doanh thu";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // label1
             // 
@@ -136,10 +139,22 @@
             // 
             panel1.BackColor = Color.Teal;
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(label3);
             panel1.Location = new Point(12, 32);
             panel1.Name = "panel1";
             panel1.Size = new Size(1298, 140);
             panel1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ButtonFace;
+            label3.Location = new Point(1037, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(100, 40);
+            label3.TabIndex = 7;
+            label3.Text = "label3";
             // 
             // flowLayoutPanel1
             // 
@@ -170,35 +185,26 @@
             btnNguyenLieu.UseVisualStyleBackColor = true;
             btnNguyenLieu.Click += btnNguyenLieu_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(775, 303);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 6;
-            label2.Text = "label2";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(779, 367);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 7;
-            label3.Text = "label3";
-            // 
             // timer1
             // 
             timer1.Tick += timer1_Tick;
+            // 
+            // lblSoDu
+            // 
+            lblSoDu.AutoSize = true;
+            lblSoDu.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSoDu.Location = new Point(949, 759);
+            lblSoDu.Name = "lblSoDu";
+            lblSoDu.Size = new Size(100, 40);
+            lblSoDu.TabIndex = 8;
+            lblSoDu.Text = "label4";
             // 
             // ManageForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1321, 838);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lblSoDu);
             Controls.Add(btnNguyenLieu);
             Controls.Add(flpThongKeBan);
             Controls.Add(flowLayoutPanel1);
@@ -235,8 +241,8 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private FlowLayoutPanel flpThongKeBan;
         private Button btnNguyenLieu;
-        private Label label2;
         private Label label3;
         private System.Windows.Forms.Timer timer1;
+        private Label lblSoDu;
     }
 }

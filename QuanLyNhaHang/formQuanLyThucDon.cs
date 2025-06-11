@@ -26,6 +26,15 @@ namespace QuanLyNhaHang
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             dataGridView1.Columns["id_mon_an"].Visible = false; // Ẩn cột id_mon_an
+            dataGridView1.Columns["Ten_mon_an"].HeaderText = "Tên Món Ăn";
+            dataGridView1.Columns["Phan_loai"].HeaderText = "Phân Loại";
+            dataGridView1.Columns["Don_gia"].HeaderText = "Đơn Giá";
+            dataGridView1.Columns["So_luong"].HeaderText = "Số Lượng";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 14);
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 16, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         private void LoadData()
         {
@@ -164,6 +173,13 @@ namespace QuanLyNhaHang
             btnGhi.Enabled = false;
             btnhuybo.Enabled = false;
             btnThoat.Enabled = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            ManageForm manageForm = new ManageForm();   
+            manageForm.Show();  
+            this.Hide(); // Ẩn form hiện tại    
         }
     }
 }

@@ -48,7 +48,11 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.ColumnHeadersHeight = 60;
             dataGridView1.Location = new Point(561, 88);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(681, 502);
@@ -174,6 +178,7 @@
             btnThoat.TabIndex = 2;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
             // 
             // label4
             // 

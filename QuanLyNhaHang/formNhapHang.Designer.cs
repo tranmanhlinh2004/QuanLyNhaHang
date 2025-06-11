@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -80,7 +82,27 @@
             // 
             // dgvNguyenLieu
             // 
-            dgvNguyenLieu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNguyenLieu.AllowUserToAddRows = false;
+            dgvNguyenLieu.AllowUserToDeleteRows = false;
+            dgvNguyenLieu.AllowUserToResizeColumns = false;
+            dgvNguyenLieu.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvNguyenLieu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvNguyenLieu.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvNguyenLieu.DefaultCellStyle = dataGridViewCellStyle2;
             dgvNguyenLieu.Location = new Point(535, 65);
             dgvNguyenLieu.Name = "dgvNguyenLieu";
             dgvNguyenLieu.Size = new Size(639, 298);
@@ -113,7 +135,13 @@
             // 
             // dgvKho
             // 
-            dgvKho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKho.AllowUserToAddRows = false;
+            dgvKho.AllowUserToDeleteRows = false;
+            dgvKho.AllowUserToResizeColumns = false;
+            dgvKho.AllowUserToResizeRows = false;
+            dgvKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvKho.ColumnHeadersHeight = 60;
+            dgvKho.DefaultCellStyle = dataGridViewCellStyle2;
             dgvKho.Location = new Point(56, 65);
             dgvKho.Name = "dgvKho";
             dgvKho.Size = new Size(428, 298);
@@ -154,7 +182,13 @@
             // 
             // dgvNhaCungCap
             // 
-            dgvNhaCungCap.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNhaCungCap.AllowUserToAddRows = false;
+            dgvNhaCungCap.AllowUserToDeleteRows = false;
+            dgvNhaCungCap.AllowUserToResizeColumns = false;
+            dgvNhaCungCap.AllowUserToResizeRows = false;
+            dgvNhaCungCap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvNhaCungCap.ColumnHeadersHeight = 60;
+            dgvNhaCungCap.DefaultCellStyle = dataGridViewCellStyle2;
             dgvNhaCungCap.Location = new Point(535, 452);
             dgvNhaCungCap.Name = "dgvNhaCungCap";
             dgvNhaCungCap.Size = new Size(639, 271);

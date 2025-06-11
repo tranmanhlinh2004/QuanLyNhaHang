@@ -79,10 +79,40 @@ namespace QuanLyNhaHang
         }
 
 
+        private void HienThiSoDu()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("Data Source=(local);Initial Catalog=QuanLyNhaHang;Integrated Security=True"))
+                {
+                    conn.Open();
+                    string query = "SELECT SoDu FROM ViTien";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        int soDu = Convert.ToInt32(result);
+                        lblSoDu.Text = "Số dư ví: " + soDu.ToString("N0") + " VNĐ"; // hiển thị có phân tách dấu chấm
+                    }
+                    else
+                    {
+                        lblSoDu.Text = "Không có dữ liệu ví.";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi hiển thị số dư: " + ex.Message);
+            }
+        }
+
         private void ManageForm_Load(object sender, EventArgs e)
         {
             ThongKeBan();
             timer1_Tick(sender, e);
+            timer1.Start(); // Bắt đầu đếm thời gian
+            HienThiSoDu();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -115,7 +145,6 @@ namespace QuanLyNhaHang
         private void timer1_Tick(object sender, EventArgs e)
         {
             label3.Text = DateTime.Now.ToString("hh:mm:ss tt");
-            label2.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -123,6 +152,27 @@ namespace QuanLyNhaHang
             Option3 option3 = new Option3();
             option3.Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            formQuanLyHoaDon fHoaDon = new formQuanLyHoaDon();
+            fHoaDon.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formQuanLyBanAn fBanAn = new formQuanLyBanAn();
+            fBanAn.Show();
+            this.Hide(); // Ẩn form hiện tại    
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            formDoanhThu fDoanhThu = new formDoanhThu();
+            fDoanhThu.Show();
+            this.Hide(); // Ẩn form hiện tại
         }
     }
 }

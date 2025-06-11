@@ -93,12 +93,26 @@ namespace QuanLyNhaHang
                 DataTable dt1 = new DataTable();
                 da1.Fill(dt1);
                 dataGridView1.DataSource = dt1;
-
+                dataGridView1.Columns[0].HeaderText = "Tên nguyên liệu";
+                dataGridView1.Columns[1].HeaderText = "Số lượng";
+                dataGridView1.Columns[2].HeaderText = "Đơn vị tính";
+                dataGridView1.Columns[3].HeaderText = "Ngày cập nhật";
+                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.RowTemplate.Height = 30;
                 // Load thực đơn vào dgv2
                 SqlDataAdapter da2 = new SqlDataAdapter("SELECT * FROM ThucDon", conn);
                 DataTable dt2 = new DataTable();
                 da2.Fill(dt2);
                 dataGridView2.DataSource = dt2;
+                dataGridView2.Columns[0].Visible = false;
+                dataGridView2.Columns[1].HeaderText = "Tên món ăn";
+                dataGridView2.Columns[2].HeaderText = "Phân loại";
+                dataGridView2.Columns[3].HeaderText = "Đơn giá";
+                dataGridView2.Columns[4].HeaderText = "Số lượng";
+                dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                dataGridView2.RowTemplate.Height = 30;
             }
         }
         private void LoadNguyenLieuComboBox()

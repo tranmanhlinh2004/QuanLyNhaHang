@@ -134,6 +134,19 @@ namespace QuanLyNhaHang
                     SqlCommand cmdBan = new SqlCommand(updateBan, conn, tran);
                     cmdBan.Parameters.AddWithValue("@idBan", idBan);
                     cmdBan.ExecuteNonQuery();
+                    // Cộng tiền vào ví sau khi khách thanh toán
+                    string updateVi = "UPDATE ViTien SET SoDu = SoDu + @soTien";
+                    SqlCommand cmdVi = new SqlCommand(updateVi, conn, tran);
+                    cmdVi.Parameters.AddWithValue("@soTien", tongTien);
+                    cmdVi.ExecuteNonQuery();
+                    // Ghi lịch sử giao dịch - Thu
+                    string insertLog = @"INSERT INTO LichSuGiaoDich (So_tien, Loai_giao_dich, Mo_ta)
+                    VALUES (@tien, N'Thu', @mota)";
+                    SqlCommand cmdLog = new SqlCommand(insertLog, conn, tran);
+                    cmdLog.Parameters.AddWithValue("@tien", tongTien);
+                    cmdLog.Parameters.AddWithValue("@mota", "Khách thanh toán hóa đơn #" + idHoaDon);
+                    cmdLog.ExecuteNonQuery();
+
 
                     tran.Commit();
                     MessageBox.Show("Thanh toán thành công!");
