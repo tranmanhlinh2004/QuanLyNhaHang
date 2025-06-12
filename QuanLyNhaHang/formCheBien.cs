@@ -123,8 +123,6 @@ namespace QuanLyNhaHang
                 SqlDataAdapter da = new SqlDataAdapter("SELECT id_nguyen_lieu, Ten_nguyen_lieu FROM NguyenLieu", conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
-                // Gán dữ liệu cho các ComboBox (mỗi cái cần 1 bản sao của DataTable)
                 cboNguyenLieu1.DataSource = dt.Copy();
                 cboNguyenLieu1.DisplayMember = "Ten_nguyen_lieu";
                 cboNguyenLieu1.ValueMember = "id_nguyen_lieu";
@@ -307,7 +305,7 @@ namespace QuanLyNhaHang
                     OUTPUT INSERTED.id_mon_an
                     VALUES (@ten, @loai, @gia, 1)", conn, tran);
                             insertCmd.Parameters.AddWithValue("@ten", tenMonAn);
-                            insertCmd.Parameters.AddWithValue("@loai", "Đồ ăn"); // Hoặc thay đổi tùy loại
+                            insertCmd.Parameters.AddWithValue("@loai", ""); // Hoặc thay đổi tùy loại
                             insertCmd.Parameters.AddWithValue("@gia", 0); // Chưa biết giá
 
                             idMonAn = (int)insertCmd.ExecuteScalar();

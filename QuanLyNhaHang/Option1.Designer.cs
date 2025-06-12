@@ -50,20 +50,20 @@
             btnNhanVien.Name = "btnNhanVien";
             btnNhanVien.Size = new Size(188, 66);
             btnNhanVien.TabIndex = 0;
-            btnNhanVien.Text = "Nhân viên";
+            btnNhanVien.Text = "Quản lý";
             btnNhanVien.UseVisualStyleBackColor = true;
             btnNhanVien.Click += btnNhanVien_Click;
             // 
-            // OptionForm
+            // Option1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(634, 297);
+            ClientSize = new Size(617, 283);
             Controls.Add(btnNhanVien);
             Controls.Add(btnKhachHang);
-            Name = "OptionForm";
+            Name = "Option1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "OptionForm";
+            Text = "Option1";
             ResumeLayout(false);
         }
 

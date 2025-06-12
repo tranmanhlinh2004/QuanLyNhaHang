@@ -20,17 +20,20 @@ namespace QuanLyNhaHang
         }
         void LoadData()
         {
+            //Lấy toàn bộ dữ liệu nguyên liệu và hiển thị lên dgvNguyenLieu
             // Load nguyên liệu
             SqlDataAdapter da1 = new SqlDataAdapter("SELECT * FROM NguyenLieu", conn);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
             dgvNguyenLieu.DataSource = dt1;
+            //Ẩn cột ID và đổi tiêu đề cột cho dễ nhìn.
             dgvNguyenLieu.Columns["id_nguyen_lieu"].Visible = false;
             dgvNguyenLieu.Columns[1].HeaderText = "Tên nguyên liệu";
             dgvNguyenLieu.Columns[2].HeaderText = "Đơn vị tính";
             dgvNguyenLieu.Columns[3].HeaderText = "Đơn giá";
             dgvNguyenLieu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // Load nhà cung cấp
+            //Hiển thị danh sách nhà cung cấp với tên và địa chỉ.
             SqlDataAdapter da2 = new SqlDataAdapter("SELECT Ten_nha_cung_cap, Dia_chi FROM NhaCungCap", conn);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
@@ -40,6 +43,7 @@ namespace QuanLyNhaHang
             dgvNhaCungCap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Load tồn kho
+            //Hiển thị nguyên liệu còn tồn trong kho (bằng phép JOIN giữa bảng NguyenLieu và TonKho).
             SqlDataAdapter da3 = new SqlDataAdapter("select Ten_nguyen_lieu, So_luong_ton, TonKho.Don_vi_tinh from NguyenLieu\r\n\tjoin TonKho on NguyenLieu.id_nguyen_lieu = TonKho.id_nguyen_lieu", conn);
             DataTable dt3 = new DataTable();
             da3.Fill(dt3);
@@ -49,12 +53,13 @@ namespace QuanLyNhaHang
             dgvKho.Columns[2].HeaderText = "Đơn vị tính";
             dgvKho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        //Khi form được mở ra, gọi LoadData() để hiển thị dữ liệu.
 
         private void formNhapHang_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
+        //Khi click vào 1 dòng trong bảng dgvNhaCungCap, thông tin tên NCC sẽ được gán vào txtNhaCC.
         private void dgvNhaCungCap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -62,7 +67,7 @@ namespace QuanLyNhaHang
                 txtNhaCC.Text = dgvNhaCungCap.Rows[e.RowIndex].Cells["Ten_nha_cung_cap"].Value.ToString();
             }
         }
-
+        //Gán tên nguyên liệu đã chọn vào txtNguyenLieu.
         private void dgvNguyenLieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -99,7 +104,7 @@ namespace QuanLyNhaHang
                     MessageBox.Show("Không tìm thấy nguyên liệu.");
                     return;
                 }
-
+                //Tính tổng tiền cần nhập
                 int idNL = (int)reader["id_nguyen_lieu"];
                 int donGia = (int)reader["Don_gia"];
                 reader.Close();

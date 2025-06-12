@@ -54,14 +54,15 @@ namespace QuanLyNhaHang
             dtNhanvien.Load(drNhanVien);
             dataGridView.DataSource = dtNhanvien;
             drNhanVien.Close();
-            dataGridView.Columns[0].HeaderText = "Họ tên";
-            dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns[1].HeaderText = "Số điện thoại";
-            dataGridView.Columns[2].HeaderText = "Địa chỉ";
-            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns[3].HeaderText = "Ngày sinh";
-            dataGridView.Columns[4].HeaderText = "Ngày vào làm";
-            dataGridView.Columns[5].HeaderText = "Giới tính";
+            dataGridView.Columns[0].Visible = false; // ẩn cột id_nhan_vien
+            dataGridView.Columns[1].HeaderText = "Họ tên";
+            dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[2].HeaderText = "Số điện thoại";
+            dataGridView.Columns[3].HeaderText = "Địa chỉ";
+            dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[4].HeaderText = "Ngày sinh";
+            dataGridView.Columns[5].HeaderText = "Ngày vào làm";
+            dataGridView.Columns[6].HeaderText = "Giới tính";
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.DefaultCellStyle.Font = new Font("Segoe UI", 14);
             dataGridView.RowTemplate.Height = 35;

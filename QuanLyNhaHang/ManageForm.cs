@@ -93,7 +93,7 @@ namespace QuanLyNhaHang
                     if (result != null)
                     {
                         int soDu = Convert.ToInt32(result);
-                        lblSoDu.Text = "Số dư ví: " + soDu.ToString("N0") + " VNĐ"; // hiển thị có phân tách dấu chấm
+                        lblSoDu.Text = "Số dư: " + soDu.ToString("N0") + " VNĐ"; // hiển thị có phân tách dấu chấm
                     }
                     else
                     {
@@ -106,7 +106,11 @@ namespace QuanLyNhaHang
                 MessageBox.Show("Lỗi khi hiển thị số dư: " + ex.Message);
             }
         }
-
+        private void HideAllSubMenus()
+        {
+            panelSubMonAn.Visible = false;
+            panelNhapHang.Visible = false;
+        }
         private void ManageForm_Load(object sender, EventArgs e)
         {
             ThongKeBan();
@@ -138,9 +142,7 @@ namespace QuanLyNhaHang
 
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
-            Option2 fNhapHang = new Option2();
-            fNhapHang.Show();
-            this.Hide(); // Ẩn form hiện tại
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -149,9 +151,13 @@ namespace QuanLyNhaHang
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Option3 option3 = new Option3();
-            option3.Show();
-            this.Hide();
+            if (panelSubMonAn.Visible)
+                panelSubMonAn.Visible = false;
+            else
+            {
+                HideAllSubMenus();
+                panelSubMonAn.Visible = true;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -172,6 +178,45 @@ namespace QuanLyNhaHang
         {
             formDoanhThu fDoanhThu = new formDoanhThu();
             fDoanhThu.Show();
+            this.Hide(); // Ẩn form hiện tại
+        }
+
+        private void btnCheBien_Click(object sender, EventArgs e)
+        {
+            formCheBien fCheBien = new formCheBien();
+            fCheBien.Show();
+            this.Hide(); // Ẩn form hiện tại
+        }
+
+        private void btnThucDon_Click(object sender, EventArgs e)
+        {
+            formQuanLyThucDon formQuanLyThucDon = new formQuanLyThucDon();
+            formQuanLyThucDon.Show();
+            this.Hide();
+        }
+
+        private void btnQuanLyNhapHang_Click(object sender, EventArgs e)
+        {
+            if (panelNhapHang.Visible)
+                panelNhapHang.Visible = false;
+            else
+            {
+                HideAllSubMenus();
+                panelNhapHang.Visible = true;
+            }
+        }
+
+        private void btnNhapHang_Click_1(object sender, EventArgs e)
+        {
+            formNhapHang formNhapHang = new formNhapHang();
+            formNhapHang.Show();
+            this.Hide();
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            formNhaCungCap formNhaCungCap = new formNhaCungCap();
+            formNhaCungCap.Show();
             this.Hide(); // Ẩn form hiện tại
         }
     }
