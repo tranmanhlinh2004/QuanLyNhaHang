@@ -186,5 +186,10 @@ namespace QuanLyNhaHang
             txtNguyenLieu.Clear();
             txtSoLuong.Clear();
         }
+
+        private void dgvKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -164,6 +164,7 @@
             dgvKho.Name = "dgvKho";
             dgvKho.Size = new Size(428, 298);
             dgvKho.TabIndex = 5;
+            dgvKho.CellContentClick += dgvKho_CellContentClick;
             // 
             // btnNhapHang
             // 
